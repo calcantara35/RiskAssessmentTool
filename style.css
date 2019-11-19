@@ -142,7 +142,6 @@ li:hover ~ li p {
 
 #footer {
   display: flex;
-
   height: 20vh;
   width: 100%;
   background-color: #312f2f;
