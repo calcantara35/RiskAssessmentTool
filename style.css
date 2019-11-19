@@ -135,10 +135,14 @@ li:hover ~ li p {
   animation: wave-animation 0.3s infinite;
 }
 
+.fixed {
+  position: absolute;
+  bottom: 0px;
+}
+
 #footer {
   display: flex;
-  /* position: absolute;
-  bottom: 0px;  will need to add these styles to it once event fires*/
+
   height: 20vh;
   width: 100%;
   background-color: #312f2f;
