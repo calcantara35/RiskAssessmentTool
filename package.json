@@ -1,0 +1,19 @@
+{
+  "name": "riskassementtool",
+  "version": "1.0.0",
+  "description": "IST 302 Risk Assessment Tool",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calcantara35/RiskAssessmentTool.git"
+  },
+  "author": "Cesar Alcantara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calcantara35/RiskAssessmentTool/issues"
+  },
+  "homepage": "https://github.com/calcantara35/RiskAssessmentTool#readme"
+}
