@@ -3,6 +3,74 @@ let totalBusinessVar = 0;
 let totalOperationsVar = 0;
 let totalFinanicalAppVar = 0;
 
+// riskLevelBusiness function
+const riskLevelBusiness = () => {
+  let businessRiskLevel = document.querySelector("#businessRiskLevel");
+
+  if (totalBusinessVar >= 9 && totalBusinessVar <= 16) {
+    businessRiskLevel.innerHTML = `<h1 class='low-risk'>Low Risk!</h1>`;
+  } else if (totalBusinessVar >= 17 && totalBusinessVar <= 24) {
+    businessRiskLevel.innerHTML = `<h1 class='low-medium-risk'>Low-Medium Risk!</h1>`;
+  } else if (totalBusinessVar >= 25 && totalBusinessVar <= 32) {
+    businessRiskLevel.innerHTML = `<h1 class='medium-risk'>Medium Risk!</h1>`;
+  } else if (totalBusinessVar >= 33 && totalBusinessVar <= 40) {
+    businessRiskLevel.innerHTML = `<h1 class='medium-high-risk'>Medium-High Risk!</h1>`;
+  } else if (totalBusinessVar >= 41) {
+    businessRiskLevel.innerHTML = `<h1 class='high-risk'>High Risk!</h1>`;
+  }
+};
+
+// riskLevelOps function
+const riskLevelOps = () => {
+  let opsRiskLevel = document.querySelector("#opsRiskLevel");
+
+  if (totalOperationsVar >= 9 && totalOperationsVar <= 16) {
+    opsRiskLevel.innerHTML = `<h1 class='low-risk'>Low Risk!</h1>`;
+  } else if (totalOperationsVar >= 17 && totalOperationsVar <= 24) {
+    opsRiskLevel.innerHTML = `<h1 class='low-medium-risk'>Low-Medium Risk!</h1>`;
+  } else if (totalOperationsVar >= 25 && totalOperationsVar <= 32) {
+    opsRiskLevel.innerHTML = `<h1 class='medium-risk'>Medium Risk!</h1>`;
+  } else if (totalOperationsVar >= 33 && totalOperationsVar <= 40) {
+    opsRiskLevel.innerHTML = `<h1 class='medium-high-risk'>Medium-High Risk!</h1>`;
+  } else if (totalOperationsVar >= 41) {
+    opsRiskLevel.innerHTML = `<h1 class='high-risk'>High Risk!</h1>`;
+  }
+};
+
+// riskLevelFinancialApps function
+const riskLevelFinancialApps = () => {
+  let faRiskLevel = document.querySelector("#faRiskLevel");
+
+  if (totalFinanicalAppVar >= 9 && totalFinanicalAppVar <= 16) {
+    faRiskLevel.innerHTML = `<h1 class='low-risk'>Low Risk!</h1>`;
+  } else if (totalFinanicalAppVar >= 17 && totalFinanicalAppVar <= 24) {
+    faRiskLevel.innerHTML = `<h1 class='low-medium-risk'>Low-Medium Risk!</h1>`;
+  } else if (totalFinanicalAppVar >= 25 && totalFinanicalAppVar <= 32) {
+    faRiskLevel.innerHTML = `<h1 class='medium-risk'>Medium Risk!</h1>`;
+  } else if (totalFinanicalAppVar >= 33 && totalFinanicalAppVar <= 40) {
+    faRiskLevel.innerHTML = `<h1 class='medium-high-risk'>Medium-High Risk!</h1>`;
+  } else if (totalFinanicalAppVar >= 41) {
+    faRiskLevel.innerHTML = `<h1 class='high-risk'>High Risk!</h1>`;
+  }
+};
+
+// riskLevelOrg function
+const riskLevelOrg = () => {
+  let orgRiskLevel = document.querySelector("#orgRiskLevel");
+
+  if (totalSumVar >= 27 && totalSumVar <= 50) {
+    orgRiskLevel.innerHTML = `<h1 class='low-risk'>Low Risk!</h1>`;
+  } else if (totalSumVar >= 51 && totalSumVar <= 74) {
+    orgRiskLevel.innerHTML = `<h1 class='low-medium-risk'>Low-Medium Risk!</h1>`;
+  } else if (totalSumVar >= 75 && totalSumVar <= 98) {
+    orgRiskLevel.innerHTML = `<h1 class='medium-risk'>Medium Risk!</h1>`;
+  } else if (totalSumVar >= 99 && totalSumVar <= 122) {
+    orgRiskLevel.innerHTML = `<h1 class='medium-high-risk'>Medium-High Risk!</h1>`;
+  } else if (totalSumVar >= 123 && totalSumVar <= 145) {
+    orgRiskLevel.innerHTML = `<h1 class='high-risk'>High Risk!</h1>`;
+  }
+};
+
 // Event listener for business
 document.querySelector("#submitBtnBusiness").addEventListener("click", () => {
   let question1Val = Number(document.querySelector("#question1").value);
@@ -34,6 +102,11 @@ document.querySelector("#submitBtnBusiness").addEventListener("click", () => {
   document.querySelector("#divContainer1").style.display = "flex";
   let businessTotalEntry = document.querySelector("#totalSumBusiness");
   businessTotalEntry.innerHTML = `<h1>${totalBusinessVar}</h1>`;
+
+  // call function
+  riskLevelBusiness();
+
+  // log total for testing
   console.log(totalBusinessVar);
 });
 
@@ -64,7 +137,11 @@ document.querySelector("#submitBtnOps").addEventListener("click", () => {
   // Bring back div container
   document.querySelector("#divContainer2").style.display = "flex";
   let operationsTotalEntry = document.querySelector("#totalSumOps");
-  operationsTotalEntry.innerHTML = `<h1>${totalOperationsVar}</h1>`;
+  operationsTotalEntry.innerHTML = `<h1 class='mr-3'>${totalOperationsVar}</h1>`;
+
+  // Call function
+  riskLevelOps();
+
   console.log(totalOperationsVar);
 });
 // event listener for finanical applications
@@ -94,7 +171,11 @@ document.querySelector("#submitFABtn").addEventListener("click", () => {
   // Bring back div container
   document.querySelector("#divContainer3").style.display = "flex";
   let financialTotalEntry = document.querySelector("#totalSumFA");
-  financialTotalEntry.innerHTML = `<h1>${totalFinanicalAppVar}</h1>`;
+  financialTotalEntry.innerHTML = `<h1 class='mr-3'>${totalFinanicalAppVar}</h1>`;
+
+  // Call function
+  riskLevelFinancialApps();
+
   console.log(totalFinanicalAppVar);
 });
 // Event listener for total risk
@@ -110,8 +191,12 @@ document.querySelector("#submitBtn").addEventListener("click", () => {
   totalDivContainer.style.display = "flex";
   // Place totalSumVar Value into h1 tag
   let totalTag = document.querySelector("#totalSum");
-  totalTag.innerHTML = `<h1 id='totalSum'>${totalSumVar}</h1>`;
+  totalTag.innerHTML = `<h1 class='mr-3' id='totalSum'>${totalSumVar}</h1>`;
 
+  // call function
+  riskLevelOrg();
+
+  //fix footer placement
   let footer = document.querySelector("#footer");
   footer.className = "fixed";
 

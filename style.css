@@ -101,6 +101,27 @@ body {
   display: none;
 } */
 
+/* Colors for risk level */
+.low-risk {
+  color: green;
+}
+
+.low-medium-risk {
+  color: greenyellow;
+}
+
+.medium-risk {
+  color: yellow;
+}
+
+.medium-high-risk {
+  color: orange;
+}
+
+.high-risk {
+  color: orangered;
+}
+
 /* Footer */
 ul {
   display: inline-grid;
